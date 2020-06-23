@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './Search.css';
 import states from '../states'
-
+import Economic from '../Economic/Economic'
 
 
 class Search extends Component {
@@ -26,9 +26,10 @@ class Search extends Component {
                     return <option key={state}>{state}</option>
                 })}
             </select> <br/>
-
             <button type='submit' onClick={this.handleSubmit}>See Results</button>
             </form>
+
+            <Economic ></Economic>
             </div>
         )
     }
