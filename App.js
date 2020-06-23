@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './App.css';
 import Home from './Home/Home'
+import { Route } from 'react-router';
 
 class App extends Component {
   
 
   render() {
     return (
-    <Home/>
+      <Route
+      exact path='/'
+      component={Home}
+      />
+    
     )
   }
 }
