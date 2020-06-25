@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 import states from '../states';
 import CovContext from '../CovContext'
 

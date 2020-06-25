@@ -23,7 +23,7 @@ class Medical extends Component {
                     The average medical cost of someone hospitalized for Covid-19 is $30k.<sub>1</sub> <br/>
 
                 </p>
-                <a href='https://time.com/5806312/coronavirus-treatment-cost/' target='_blank' rel='noopener noreferer'>[1]</a>
+                <a href='https://time.com/5806312/coronavirus-treatment-cost/' target='_blank' rel='noopener noreferrer'>[1]</a>
             </section>
             </>
         )
