@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import config from '../config'
 import './Human.css'
 
 
@@ -6,10 +7,29 @@ class Human extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            deaths: this.props.deaths 
+            stateCode: this.props.stateCode 
         };
     }
 
+    componentDidMount() {
+        
+        fetch(`${config.API_ENDPOINT}` + `${this.state.stateCode}/current.json`)
+            .then(res => {
+                if(res.ok) 
+                    return res.json().then(e => Promise.reject(e))
+                return res.json()
+            })
+            .then(data => {
+                this.setState({
+                    data: data,
+                    positive: data.positive,
+                    deaths: data.death
+                }, () => {console.log(data)})
+            })
+            .catch(error => {
+                console.log(error)
+            }); 
+    }
 
     info = () => {
         let desc = document.getElementById('description')
@@ -18,7 +38,7 @@ class Human extends Component {
 
 
     render() {
-        console.log(this.state.deaths)
+        console.log(this.state.stateCode)
         return (
             <div className='econ-main'>       
             <h3>Human Cost</h3> <button onClick={this.info}>info</button>

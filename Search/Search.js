@@ -10,36 +10,22 @@ class Search extends Component {
             push: () => { }
         }
     }
+
     constructor(props) {
         super(props)
         this.state = {
-            data: null,
-            deaths: null,
-            positive: null
+            state: ''
         };
     }
+    
    handleSubmit = (e) => {
        e.preventDefault()
        let element = document.getElementById('state')
        let stateCode =  element.options[element.selectedIndex].text.toLowerCase()
-       console.log(stateCode)
+       this.setState({
+           state: stateCode
+       })
        
-       fetch(`${config.API_ENDPOINT}` + `${stateCode}/current.json`)
-            .then(res => {
-                if(res.ok) 
-                    return res.json().then(e => Promise.reject(e))
-                return res.json()
-            })
-            .then(data => {
-                this.setState({
-                    data: data,
-                    positive: data.positive,
-                    deaths: data.death
-                }, () => {console.log(data)})
-            })
-            .catch(error => {
-                console.log(error)
-            });   
    }
 
     render() {
@@ -59,7 +45,7 @@ class Search extends Component {
             <button type='submit' onClick={this.handleSubmit}>See Results</button>
             </form>
 
-            
+            <Human stateCode={this.state.state}/>
             </div>
         )
     }
