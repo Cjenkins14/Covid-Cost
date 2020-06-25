@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deathcost component renders comp by default 1`] = `
+<div
+  className="death-cost"
+>
+  <h3>
+    Cumulative deaths: 
+  </h3>
+  <h3>
+    Total Human Cost: $
+    0
+  </h3>
+</div>
+`;
+
+exports[`Deathcost component renders the comp given props 1`] = `
+<div
+  className="death-cost"
+>
+  <h3>
+    Cumulative deaths: 
+    1
+  </h3>
+  <h3>
+    Total Human Cost: $
+    10,000,000
+  </h3>
+</div>
+`;

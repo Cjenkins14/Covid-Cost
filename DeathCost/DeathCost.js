@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Cost(count) {
-    let totalCost = parseInt(count.count) * 10000000;
+    let totalCost = parseInt(count.count) * 10000000 || 0;
     let string = totalCost.toString();
     let result = string.replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,");
 

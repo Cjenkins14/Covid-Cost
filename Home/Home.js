@@ -20,7 +20,7 @@ class Home extends Component {
     }
     
     render() {
-        console.log(states)
+        
         return (
             <>
             <Nav/>

@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`medcost component renders comp by default 1`] = `
+<Fragment>
+  <h3>
+    New hospital patients (daily): 
+  </h3>
+  <h3>
+    Medical costs (daily): $
+    NaN
+  </h3>
+</Fragment>
+`;
+
+exports[`medcost component renders the comp given props 1`] = `
+<Fragment>
+  <h3>
+    New hospital patients (daily): 
+    1
+  </h3>
+  <h3>
+    Medical costs (daily): $
+    30,000
+  </h3>
+</Fragment>
+`;
