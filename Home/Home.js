@@ -1,8 +1,24 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 import states from '../states';
+import CovContext from '../CovContext'
+
 
 class Home extends Component {
+    static defaultProps = {
+        history: {
+            push: () => {}
+        }
+    }
+    static contextType = CovContext;
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        let element = document.getElementById('state')
+        let stateCode =  element.options[element.selectedIndex].text.toLowerCase()
+        this.context.pushState(stateCode)
+        this.props.history.push('/human')
+    }
     
     render() {
         console.log(states)
@@ -23,7 +39,15 @@ class Home extends Component {
                 This is only for the cost in life and medical expenses, other data points may be added at a later date.
             </p>
 
-            <Link to='/search'>Search your state</Link>
+            <label htmlFor='state-select'>Select a state</label><br/>
+            <form>    
+            <select id='state' className='state-select'>
+                {states.map((state) => {
+                    return <option key={state}>{state}</option>
+                })}
+            </select> <br/>
+            <button type='submit' onClick={this.handleSubmit}>See Results</button>
+            </form>
 
 
             

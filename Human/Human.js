@@ -46,7 +46,7 @@ class Human extends Component {
             <section id='description' className='hidden'>
             <p>
                 The human cost of the outbreak is an estimation based upon the price that the federal government <br/>
-                have used for years as an estimator to what a human life is worth economically. That number is $10 million.
+                have used for years as an estimator to what a human life is worth economically. That number is $10 million.<sub> 1</sub>
             </p>
             <a href='https://www.npr.org/transcripts/835571843' target='_blank' rel='noopener noreferer'>[1]</a>
             </section>
