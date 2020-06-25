@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import states from '../states';
 import CovContext from '../CovContext'
-
+import Nav from '../Nav/Nav'
 
 class Home extends Component {
     static defaultProps = {
@@ -16,12 +16,14 @@ class Home extends Component {
         let element = document.getElementById('state')
         let stateCode =  element.options[element.selectedIndex].text.toLowerCase()
         this.context.pushState(stateCode)
-        this.props.history.push('/human')
+        this.props.history.push('/result')
     }
     
     render() {
         console.log(states)
         return (
+            <>
+            <Nav/>
             <div className="app">
             <header>
             <h1>Covid Cost</h1>
@@ -47,11 +49,8 @@ class Home extends Component {
             </select> <br/>
             <button type='submit' onClick={this.handleSubmit}>See Results</button>
             </form>
-
-
-            
-            
             </div>
+            </>
         )
     }
 }

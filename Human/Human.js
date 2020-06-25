@@ -3,7 +3,7 @@ import config from '../config';
 import './Human.css';
 import CovContext from '../CovContext';
 import Cost from '../DeathCost/DeathCost';
-
+import Nav from '../Nav/Nav'
 
 class Human extends Component {
     constructor(props) {
@@ -40,7 +40,9 @@ class Human extends Component {
     render() {
         let deaths = this.state.deaths
         return (
-            <div className='econ-main'>       
+            <>
+            <Nav/>
+            <div className='human-main'>       
             <h2>Human Cost</h2> 
             <button onClick={this.info}>info</button>
 
@@ -54,8 +56,8 @@ class Human extends Component {
 
             
             <Cost count={deaths}/>
-            
             </div>
+            </>
         )
     }
 

@@ -36,7 +36,7 @@ class App extends Component {
       />
 
       <Route
-      exact path='/search'
+      exact path='/result'
       component={Search}
       />
       <Route
