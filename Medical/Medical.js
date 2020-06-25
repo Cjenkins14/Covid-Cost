@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import CovContext from '../CovContext';
 import Nav from '../Nav/Nav';
 import config from '../config';
+import MedCost from '../MedCost/MedCost';
+
 import './Medical.css';
 
 class Medical extends Component {
@@ -22,8 +24,8 @@ class Medical extends Component {
             })
             .then(data => {
                 this.setState({
-                    deaths: data["death"]
-                }, () => {console.log()})
+                    patients: data["hospitalizedCurrently"]
+                }, () => {console.log(this.state.patients)})
             })
             .catch(error => {
                 console.log(error)
@@ -36,6 +38,8 @@ class Medical extends Component {
     }
 
     render() {
+        let patients = this.state.patients;
+
         return (
             <>
             <h2>Medical</h2>
@@ -49,7 +53,7 @@ class Medical extends Component {
                 <a href='https://time.com/5806312/coronavirus-treatment-cost/' target='_blank' rel='noopener noreferrer'>[1]</a>
             </section>
 
-            {/* <MedCost count={}/> */}
+            <MedCost count={patients}/>
             </>
         )
     };
